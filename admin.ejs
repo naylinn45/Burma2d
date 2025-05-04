@@ -1,0 +1,13 @@
+<h2>Burma 2D Admin Panel</h2>
+<p>Current Code Digit: <strong><%= code %></strong></p>
+<form method="post" action="/update-code">
+  <input name="code" value="<%= code %>" />
+  <button type="submit">Update Code</button>
+</form>
+
+<h3>Last 10 Codes</h3>
+<ul>
+  <% history.forEach(function(item) { %>
+    <li><%= item %></li>
+  <% }) %>
+</ul>

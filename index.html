@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Burma 2D</title>
+  <style>
+    body.light { background: white; color: black; }
+    body.dark { background: #121212; color: white; }
+  </style>
+</head>
+<body>
+  <h1>Welcome to the Burma 2D Site</h1>
+  <button onclick="toggleTheme()">Toggle Theme</button>
+  <script>
+    function toggleTheme() {
+      const current = localStorage.getItem('theme') || 'light';
+      const next = current === 'light' ? 'dark' : 'light';
+      document.body.className = next;
+      localStorage.setItem('theme', next);
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      const theme = localStorage.getItem('theme') || 'light';
+      document.body.className = theme;
+    });
+  </script>
+</body>
+</html>
